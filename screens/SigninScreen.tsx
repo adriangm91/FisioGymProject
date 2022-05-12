@@ -37,6 +37,7 @@ const SignInScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
 
       <View style={styles.controls}>
         <Input
+        
           placeholder="Email"
           containerStyle={styles.control}
           value={value.email}

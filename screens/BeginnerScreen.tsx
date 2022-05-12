@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { useRef } from "react";
 import YoutubePlayer, {YoutubeIframeRef} from "react-native-youtube-iframe";
-
+import { ScrollView } from "react-native";
 // const auth: Auth = getAuth(); 
 
 export default function BeginnerScreen() {
@@ -12,7 +12,8 @@ export default function BeginnerScreen() {
       <View style={styles.videoContainer}>
         
         <View style={styles.videos}>
-        <Text>Primer Ejercicio</Text>
+       <Text>Primer Ejercicio</Text>
+      <ScrollView> 
       <YoutubePlayer
       //ref={playerRef}
         height={400}
@@ -28,6 +29,8 @@ export default function BeginnerScreen() {
         //play={true}
         videoId={'IiHH0EWo8-k'}
       />
+
+      </ScrollView>
       </View>
     </View>
     

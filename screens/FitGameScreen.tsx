@@ -6,25 +6,14 @@ import { getAuth, signOut } from 'firebase/auth'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { StackScreenProps } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import FitGameScreen from "./FitGameScreen";
-import MyWorkOutScreen from "./MyWorkOutScreen";
-import { NavigationContainer } from "@react-navigation/native";
 
 
-const auth = getAuth();
-const Tab = createBottomTabNavigator();
 
-const HomeScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
-//export default function HomeScreen() {
+const FitGameScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
   const { user } = useAuthentication();
 
   return (
-
-    <View style={styles.container}>
-
-      <Text>Welcome {user?.email}</Text>
-      <Text>Let's Play</Text>
-      <View style={styles.buttons}>
+    <View>
       <Button
         buttonStyle={styles.buttonPlay}
         icon={
@@ -35,7 +24,7 @@ const HomeScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
           />
         }
         title="Beginner"
-        onPress={()=> navigation.navigate('Beginner')}
+        onPress={() => navigation.navigate('Beginner')}
       />
       <Button
         buttonStyle={styles.buttonPlay}
@@ -47,7 +36,7 @@ const HomeScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
           />
         }
         title="Amateur"
-        //onPress={()=> navigation.navigate('Amateur')}
+      //onPress={()=> navigation.navigate('Amateur')}
       />
       <Button
         buttonStyle={styles.buttonPlay}
@@ -59,24 +48,11 @@ const HomeScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
           />
         }
         title="Pro"
-        //onPress={()=> navigation.navigate('Professional')}
+      //onPress={()=> navigation.navigate('Professional')}
       />
-
-      </View>
-      <Button
-        title="Sign Out"
-        style={styles.button}
-        onPress={() => signOut(auth)}
-      />
-      <Tab.Navigator>
-        <Tab.Screen name="My Workout" component={MyWorkOutScreen} />
-        <Tab.Screen name="Fit Game" component={FitGameScreen} />
-      </Tab.Navigator>
-
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -98,4 +74,4 @@ const styles = StyleSheet.create({
     borderRadius: 60
   }
 });
-export default HomeScreen;
+export default FitGameScreen;
