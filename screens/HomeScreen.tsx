@@ -12,7 +12,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 
 const auth = getAuth();
-const Tab = createBottomTabNavigator();
+
 
 const HomeScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
 //export default function HomeScreen() {
@@ -23,56 +23,17 @@ const HomeScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
     <View style={styles.container}>
 
       <Text>Welcome {user?.email}</Text>
-      <Text>Let's Play</Text>
+      
       <View style={styles.buttons}>
-      <Button
-        buttonStyle={styles.buttonPlay}
-        icon={
-          <Icon
-            name="play"
-            size={16}
-            color="black"
-          />
-        }
-        title="Beginner"
-        onPress={()=> navigation.navigate('Beginner')}
-      />
-      <Button
-        buttonStyle={styles.buttonPlay}
-        icon={
-          <Icon
-            name="play"
-            size={16}
-            color="black"
-          />
-        }
-        title="Amateur"
-        //onPress={()=> navigation.navigate('Amateur')}
-      />
-      <Button
-        buttonStyle={styles.buttonPlay}
-        icon={
-          <Icon
-            name="play"
-            size={16}
-            color="black"
-          />
-        }
-        title="Pro"
-        //onPress={()=> navigation.navigate('Professional')}
-      />
-
-      </View>
+      
       <Button
         title="Sign Out"
         style={styles.button}
         onPress={() => signOut(auth)}
       />
-      <Tab.Navigator>
-        <Tab.Screen name="My Workout" component={MyWorkOutScreen} />
-        <Tab.Screen name="Fit Game" component={FitGameScreen} />
-      </Tab.Navigator>
+      </View>
 
+     
     </View>
   );
 }

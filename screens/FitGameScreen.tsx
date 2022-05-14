@@ -10,10 +10,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 
 const FitGameScreen: React.FC<StackScreenProps<any>> = ({ navigation }) => {
-  const { user } = useAuthentication();
+//export default function FitGameScreen() {  
+const { user } = useAuthentication();
 
   return (
     <View>
+      <Text>Let's Play</Text>
       <Button
         buttonStyle={styles.buttonPlay}
         icon={
